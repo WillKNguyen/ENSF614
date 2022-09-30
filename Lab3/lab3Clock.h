@@ -19,29 +19,46 @@ public:
     
     Clock (int hour, int minute, int second);
     // PROMISES: initializes the Clock object with the provided parameters.
-    // However, everything will be set to 0 if the provided paramters exceded the constraints
+    // However, everything will be set to 0 if any of the provided parameters
+    // exceeded their accepted range
 
     void set_hour (int hour);
+    // PROMISES: set the hour part to the provided value if it is within the accepted range
 
     void set_minute (int minute);
+    // PROMISES: set the minute part to the provided value if it is within the accepted range
 
     void set_second (int second);
+    // PROMISES: set the second part to the provided value if it is within the accepted range
 
     int get_hour () const;
+    // PROMISES: returns the hour part of the clock
+
     int get_minute () const;
+    // PROMISES: returns the minute part of the clock
+
     int get_second () const;
+    // PROMISES: returns the second part of the clock
 
     void increment(); 
+    // PROMISES: increases the clock by 1 second increment
+
     void decrement();
+    // PROMISES: decreases the clock by 1 second increment
 
     void add_seconds(int seconds);
+    // PROMISES: increases the clock by the provided seconds
 
 private:
-    int hour;
-    int minute;
-    int second;
+    int hour;   // the hour component
+    int minute; // the minute component
+    int second; // the second component
     int hms_to_sec();
+    // PROMISES: this helper function returns the current clock time
+    // to total seconds
     void sec_to_hms (int seconds);
+    // PROMISES: this helper function converts the provided number of seconds
+    // to clock time
 };
 
 #endif
